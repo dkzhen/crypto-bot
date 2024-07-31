@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon app.js",
-    "prod": "node app.js"
+    "prod": "node app.js",
+    "singsing": "node ./src/projects/singsing-bot/main.js"
   },
   "keywords": [],
   "author": "",
@@ -13,9 +14,9 @@
   "dependencies": {
     "@cemalgnlts/mailjs": "^3.0.1",
     "axios": "^1.7.2",
-    "cheerio": "^1.0.0-rc.12",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
+    "node-cron": "^3.0.3",
     "playwright": "^1.45.3",
     "randomstring": "^1.3.0",
     "readline": "^1.3.0"

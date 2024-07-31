@@ -23,6 +23,7 @@ const register = async (email) => {
       referralCode: data.joinReferralCode,
     });
   } catch (error) {
+    console.log(error);
     console.log("ERROR on register");
   }
 };

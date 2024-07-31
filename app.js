@@ -1,61 +1,58 @@
-const { default: axios } = require("axios");
-const register = require("./src/projects/entity-finance/register");
-const {
-  getAccount,
-  getMessage,
-  login,
-  getMessageById,
-} = require("./src/utils/mail");
-const { claim } = require("./src/projects/entity-finance/claim");
-const { countLoopEntity } = require("./src/configs/constant");
+const readline = require("readline");
+const express = require("express");
+const runningEntity = require("./src/projects/entity-finance/running");
 
-function extractVerificationLink(content) {
-  const regex =
-    /https:\/\/spacerace\.entity\.global\/email-verification\/[a-zA-Z0-9]+/;
-  const match = content.match(regex);
-  return match ? match[0] : null;
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout,
+});
+
+// Fungsi untuk menampilkan pesan dan menerima input dari pengguna
+function askQuestion(query) {
+  return new Promise((resolve) => rl.question(query, resolve));
 }
 
-async function delayedExecution(seconds) {
-  await new Promise((resolve) => setTimeout(resolve, seconds || 3000));
-  console.log("Delayed execution after 3 seconds");
-}
-async function getEmail() {
-  const account = await getAccount();
-  console.log(account);
-  await register(account.username);
-  const token = await login(account.username, account.password);
-  await delayedExecution();
-  const message = await getMessage(token);
-  const [messageId] = message;
-  const text = await getMessageById(messageId.id, token);
-  await delayedExecution();
-  const verificationLink = extractVerificationLink(text.text);
-  console.log("Verification Link:", verificationLink);
+// Fungsi untuk membuat aplikasi Express pada port tertentu
+function startExpressApp(port) {
+  const app = express();
 
-  const { chromium } = require("playwright");
+  app.get("/", (req, res) => {
+    res.send(`Hello, you are on port ${port}`);
+  });
 
-  const browser = await chromium.launch();
-  const page = await browser.newPage();
-  await page.goto(verificationLink);
-  // Wait for content that requires JavaScript
-  await page.waitForSelector("button.continueBtn");
-  await page.content();
-  console.log("verification email successfull");
-
-  await browser.close();
-
-  await delayedExecution(5000);
-  await claim(account.username);
+  app.listen(port, () => {
+    console.log(`Express app is running on port ${port}`);
+  });
 }
 
-async function fetchEmails() {
-  let count = 0;
-  while (count < countLoopEntity) {
-    await getEmail();
-    await delayedExecution(3000);
-    count++;
+// Fungsi utama
+async function main() {
+  console.log("Welcome on bot select your options!");
+
+  let choice = await askQuestion(
+    "Select your options: \n1. Jalankan pada port 3000\n2. Jalankan pada port 4000\n3. Jalankan pada port 5000\n4. Bot Entity Space\nEnter your choice [1,2,3,4]: "
+  );
+
+  switch (choice) {
+    case "1":
+      startExpressApp(3000);
+      break;
+    case "2":
+      startExpressApp(4000);
+      break;
+    case "3":
+      startExpressApp(5000);
+      break;
+    case "4":
+      runningEntity();
+      break;
+    default:
+      console.log("Invalid choice");
+      rl.close();
+      return;
   }
+
+  rl.close();
 }
 
-fetchEmails();
+main();
