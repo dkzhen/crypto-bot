@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "nodemon app.js",
     "prod": "node app.js",
-    "singsing": "node ./src/projects/singsing-bot/main.js"
+    "singsing": "node ./src/projects/singsing-bot/main.js",
+    "cowtopia": "node ./src/projects/cowtopia/main.js"
   },
   "keywords": [],
   "author": "",
