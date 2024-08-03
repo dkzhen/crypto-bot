@@ -30,4 +30,13 @@ const fetchJWTTokens = async (url) => {
   }
 };
 
-module.exports = { getTokenFromBot, fetchJWTTokens };
+const fetchQueryTokens = async (url) => {
+  try {
+    const [tokens] = await getTokenFromBot(url);
+    return tokens;
+  } catch (error) {
+    return null;
+  }
+};
+
+module.exports = { getTokenFromBot, fetchJWTTokens, fetchQueryTokens };
