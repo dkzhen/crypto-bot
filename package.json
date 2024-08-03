@@ -8,7 +8,9 @@
     "prod": "node app.js",
     "singsing": "node ./src/projects/singsing-bot/main.js",
     "cowtopia": "node ./src/projects/cowtopia/main.js",
-    "blum": "node ./src/projects/blum/main.js"
+    "blum": "node ./src/projects/blum/main.js",
+    "banana": "node ./src/projects/banana/main.js",
+    "popp": "node ./src/projects/popp/main.js"
   },
   "keywords": [],
   "author": "",

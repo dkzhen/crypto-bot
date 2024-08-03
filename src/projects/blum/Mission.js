@@ -23,7 +23,7 @@ exports.mission = async () => {
       if (taskNotStarted.length > 0) {
         for (const task of taskNotStarted) {
           try {
-            const start = await axios.post(
+            await axios.post(
               `https://game-domain.blum.codes/api/v1/tasks/${task.id}/start`,
               {},
               {
@@ -70,7 +70,7 @@ exports.claimMission = async () => {
       if (taskReadyToClaim.length > 0) {
         for (const task of taskReadyToClaim) {
           try {
-            const claim = await axios.post(
+            await axios.post(
               `https://game-domain.blum.codes/api/v1/tasks/${task.id}/claim`,
               {},
               {
