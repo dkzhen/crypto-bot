@@ -21,7 +21,7 @@ cron.schedule("0 * * * *", claimMission);
 cron.schedule("0 */3 * * *", claimOfflineProfit);
 cron.schedule("0 * * * *", buyAnimal);
 
-const port = process.env.PORT || 202;
+const port = process.env.PORT_COWTOPIA || 202;
 app.listen(port, () => {
   console.log("Express app is running on port " + port);
   console.log(`[ BOT ] : Bot starting...`);
