@@ -11,7 +11,8 @@
     "blum": "node ./src/projects/blum/main.js",
     "banana": "node ./src/projects/banana/main.js",
     "popp": "node ./src/projects/popp/main.js",
-    "nomis": "node ./src/projects/nomis/main.js"
+    "nomis": "node ./src/projects/nomis/main.js",
+    "tabizoo"  :"node ./src/projects/tabizoo/main.js"
   },
   "keywords": [],
   "author": "",
