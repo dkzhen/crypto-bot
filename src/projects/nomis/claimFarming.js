@@ -26,7 +26,7 @@ exports.claimFarming = async () => {
               },
             }
           );
-          console.log(`[ Running ] : Claim Farming successfully...`, claim);
+          console.log(`[ Running ] : Claim Farming successfully...`);
         }
       } catch (error) {
         if (error.response.status == 400) {
