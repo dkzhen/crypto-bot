@@ -12,7 +12,8 @@
     "banana": "node ./src/projects/banana/main.js",
     "popp": "node ./src/projects/popp/main.js",
     "nomis": "node ./src/projects/nomis/main.js",
-    "tabizoo"  :"node ./src/projects/tabizoo/main.js"
+    "tabizoo": "node ./src/projects/tabizoo/main.js",
+    "gumart": "node ./src/projects/gumart/main.js"
   },
   "keywords": [],
   "author": "",

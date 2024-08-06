@@ -14,6 +14,15 @@ exports.validateToken = async () => {
       await axios.post("https://app.tabibot.com/api/user/sign-in", {}, headers);
       validToken.push(token);
     } catch (error) {
+      const url = `${process.env.API_URL}/bot/sendMessage`;
+      await axios.post(url, {
+        chatId: token.telegramId,
+        message: `Token expired or invalid: 
+ \nBot : @tabizoo 
+ \nTelegramId : ${token.telegramId} \nToken : ${token.token}`,
+        tokenId: token.id,
+      });
+
       console.log(`[ Error ] : token not valid , response code : ${error}`);
     }
   }
