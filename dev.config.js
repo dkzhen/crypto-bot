@@ -4,7 +4,7 @@ module.exports = {
     {
       name: "singsing",
       script: "npm",
-      args: "singsing",
+      args: "run singsing",
       instances: "max",
       exec_mode: "cluster",
       env: {
@@ -16,7 +16,7 @@ module.exports = {
     {
       name: "cowtopia",
       script: "npm",
-      args: "cowtopia",
+      args: "run cowtopia",
       instances: "max",
       exec_mode: "cluster",
       env: {
@@ -28,7 +28,7 @@ module.exports = {
     {
       name: "blum",
       script: "npm",
-      args: "blum",
+      args: "run blum",
       instances: "max",
       exec_mode: "cluster",
       env: {
@@ -40,7 +40,7 @@ module.exports = {
     {
       name: "nomis",
       script: "npm",
-      args: "nomis",
+      args: "run nomis",
       instances: "max",
       exec_mode: "cluster",
       env: {
@@ -52,7 +52,7 @@ module.exports = {
     {
       name: "piggy",
       script: "npm",
-      args: "piggy",
+      args: "run piggy",
       instances: "max",
       exec_mode: "cluster",
       env: {
@@ -64,7 +64,7 @@ module.exports = {
     {
       name: "banana",
       script: "npm",
-      args: "banana",
+      args: "run banana",
       instances: "max",
       exec_mode: "cluster",
       env: {
@@ -76,7 +76,7 @@ module.exports = {
     {
       name: "gumart",
       script: "npm",
-      args: "gumart",
+      args: "run gumart",
       instances: "max",
       exec_mode: "cluster",
       env: {
@@ -88,7 +88,7 @@ module.exports = {
     {
       name: "tabizoo",
       script: "npm",
-      args: "tabizoo",
+      args: "run tabizoo",
       instances: "max",
       exec_mode: "cluster",
       env: {
@@ -100,7 +100,7 @@ module.exports = {
     {
       name: "popp",
       script: "npm",
-      args: "popp",
+      args: "run popp",
       instances: "max",
       exec_mode: "cluster",
       env: {
