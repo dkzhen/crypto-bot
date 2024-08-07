@@ -10,6 +10,7 @@ const apps = [
   "gumart",
   "tabizoo",
   "popp",
+  "secondlive",
 ];
 
 const config = apps.map((appName, index) => ({

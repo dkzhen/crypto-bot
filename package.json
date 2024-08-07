@@ -14,7 +14,8 @@
     "nomis": "node ./src/projects/nomis/main.js",
     "tabizoo": "node ./src/projects/tabizoo/main.js",
     "gumart": "node ./src/projects/gumart/main.js",
-    "piggy": "node ./src/projects/piggy/main.js"
+    "piggy": "node ./src/projects/piggy/main.js",
+    "secondlive": "node ./src/projects/secondlive/main.js"
   },
   "keywords": [],
   "author": "",
