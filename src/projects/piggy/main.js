@@ -3,6 +3,7 @@ const express = require("express");
 const { configDotenv } = require("dotenv");
 const { Task } = require("./Task");
 const { CreateStarPay } = require("./CreateStarPay");
+const { initTask } = require("./initTask");
 
 configDotenv();
 
