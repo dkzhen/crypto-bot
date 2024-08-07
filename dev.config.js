@@ -24,8 +24,6 @@ const config = apps.map((appName, index) => ({
     API_URL: API_URL,
   },
   log_date_format: "YYYY-MM-DD HH:mm Z",
-  error_file: `./logs/${appName}/error.log`,
-  out_file: `./logs/${appName}/${appName}-out.log`,
   merge_logs: true,
   max_restarts: 10,
   min_uptime: "200s",
