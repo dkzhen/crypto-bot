@@ -16,7 +16,7 @@ cron.schedule("0 * * * *", claimLotery);
 cron.schedule("0 * * * *", clickRewards);
 cron.schedule("0 * * * *", claimMission);
 
-const port = process.env.PORT_BANANA || 201;
+const port = process.env.PORT || process.env.PORT_BANANA || 201;
 app.listen(port, () => {
   console.log("Express app is running on port " + port);
   console.log(`[ BOT ] : Bot starting...`);

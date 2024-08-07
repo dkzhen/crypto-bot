@@ -29,7 +29,7 @@ const main = async () => {
 };
 main();
 
-const port = process.env.PORT_SINGSING || 201;
+const port = process.env.PORT || process.env.PORT_SINGSING || 201;
 app.listen(port, () => {
   console.log("Express app is running on port " + port);
   console.log(`[ BOT ] : Bot starting...`);

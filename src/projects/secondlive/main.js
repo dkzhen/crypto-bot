@@ -18,7 +18,7 @@ cron.schedule("0 * * * *", dailySpinner);
 cron.schedule("0 * * * *", claimFarming);
 cron.schedule("0 * * * *", crushLocker);
 
-const port = process.env.PORT_SECONDLIVE || 201;
+const port = process.env.PORT || process.env.PORT_SECONDLIVE || 201;
 app.listen(port, () => {
   console.log("Express app is running on port " + port);
   console.log(`[ BOT ] : Bot starting...`);

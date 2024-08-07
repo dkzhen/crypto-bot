@@ -20,7 +20,7 @@ cron.schedule("0 * * * *", mission);
 
 cron.schedule("0 0 * * *", DailyRewards);
 
-const port = process.env.PORT_BLUM || 201;
+const port = process.env.PORT || process.env.PORT_BLUM || 201;
 app.listen(port, () => {
   console.log("Express app is running on port " + port);
   console.log(`[ BOT ] : Bot starting...`);

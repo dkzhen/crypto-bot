@@ -16,7 +16,7 @@ main();
 cron.schedule("0 * * * *", claimFarming);
 cron.schedule("0 * * * *", startFarming);
 
-const port = process.env.PORT_NOMIS || 201;
+const port = process.env.PORT || process.env.PORT_NOMIS || 201;
 app.listen(port, () => {
   console.log("Express app is running on port " + port);
   console.log(`[ BOT ] : Bot starting...`);

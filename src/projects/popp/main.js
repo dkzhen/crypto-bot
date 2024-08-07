@@ -19,7 +19,7 @@ cron.schedule("0 * * * *", planetGame);
 cron.schedule("0 * * * *", SocialSummerTask);
 const app = express();
 
-const port = process.env.PORT_POPP || 201;
+const port = process.env.PORT || process.env.PORT_POPP || 201;
 app.listen(port, () => {
   console.log("Express app is running on port " + port);
   console.log(`[ BOT ] : Bot starting...`);

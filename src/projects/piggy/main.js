@@ -20,7 +20,7 @@ cron.schedule("0 * * * *", CreateStarPay);
 cron.schedule("0 * * * *", Task);
 cron.schedule("0 0 * * *", initTask);
 
-const port = process.env.PORT_PIGGY || 201;
+const port = process.env.PORT || process.env.PORT_PIGGY || 201;
 app.listen(port, () => {
   console.log("Express app is running on port " + port);
   console.log(`[ BOT ] : Bot starting...`);

@@ -9,7 +9,7 @@ const app = express();
 startBoost();
 cron.schedule("0 * * * *", startBoost);
 
-const port = process.env.PORT_GUMART || 201;
+const port = process.env.PORT || process.env.PORT_GUMART || 201;
 app.listen(port, () => {
   console.log("Express app is running on port " + port);
   console.log(`[ BOT ] : Bot starting...`);
