@@ -21,7 +21,7 @@ const config = apps.map((appName, index) => ({
   exec_mode: "cluster",
   env: {
     NODE_ENV: "development",
-    PORT: 200 + index,
+    PORT: 1000 + index,
     API_URL: API_URL,
   },
   log_date_format: "YYYY-MM-DD HH:mm Z",
