@@ -25,8 +25,6 @@ const config = apps.map((appName, index) => ({
   },
   log_date_format: "YYYY-MM-DD HH:mm Z",
   merge_logs: true,
-  max_restarts: 10,
-  min_uptime: "200s",
 }));
 
 module.exports = {
