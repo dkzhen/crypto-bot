@@ -8,10 +8,16 @@ configDotenv();
 
 const app = express();
 
-Task();
-CreateStarPay();
-cron.schedule("0 * * * *", Task);
+const main = async () => {
+  await initTask();
+  await Task();
+  CreateStarPay();
+};
+
+main();
 cron.schedule("0 * * * *", CreateStarPay);
+cron.schedule("0 * * * *", Task);
+cron.schedule("0 0 * * *", initTask);
 
 const port = process.env.PORT_PIGGY || 201;
 app.listen(port, () => {
