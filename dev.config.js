@@ -5,7 +5,7 @@ module.exports = {
       name: "singsing",
       script: "npm",
       args: "run singsing",
-      instances: 1,
+      instances: "max",
       exec_mode: "cluster",
       env: {
         NODE_ENV: "development",
@@ -17,7 +17,7 @@ module.exports = {
       name: "cowtopia",
       script: "npm",
       args: "run cowtopia",
-      instances: 1,
+      instances: "max",
       exec_mode: "cluster",
       env: {
         NODE_ENV: "development",
@@ -29,7 +29,7 @@ module.exports = {
       name: "blum",
       script: "npm",
       args: "run blum",
-      instances: 1,
+      instances: "max",
       exec_mode: "cluster",
       env: {
         NODE_ENV: "development",
@@ -41,7 +41,7 @@ module.exports = {
       name: "nomis",
       script: "npm",
       args: "run nomis",
-      instances: 1,
+      instances: "max",
       exec_mode: "cluster",
       env: {
         NODE_ENV: "development",
@@ -53,7 +53,7 @@ module.exports = {
       name: "piggy",
       script: "npm",
       args: "run piggy",
-      instances: 1,
+      instances: "max",
       exec_mode: "cluster",
       env: {
         NODE_ENV: "development",
@@ -65,7 +65,7 @@ module.exports = {
       name: "banana",
       script: "npm",
       args: "run banana",
-      instances: 1,
+      instances: "max",
       exec_mode: "cluster",
       env: {
         NODE_ENV: "development",
@@ -77,7 +77,7 @@ module.exports = {
       name: "gumart",
       script: "npm",
       args: "run gumart",
-      instances: 1,
+      instances: "max",
       exec_mode: "cluster",
       env: {
         NODE_ENV: "development",
@@ -89,7 +89,7 @@ module.exports = {
       name: "tabizoo",
       script: "npm",
       args: "run tabizoo",
-      instances: 1,
+      instances: "max",
       exec_mode: "cluster",
       env: {
         NODE_ENV: "development",
@@ -101,7 +101,7 @@ module.exports = {
       name: "popp",
       script: "npm",
       args: "run popp",
-      instances: 1,
+      instances: "max",
       exec_mode: "cluster",
       env: {
         NODE_ENV: "development",
