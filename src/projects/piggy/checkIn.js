@@ -1,14 +1,17 @@
 const { default: axios } = require("axios");
 const { validateToken } = require("./CheckValidToken");
 
-exports.CreateStarPay = async () => {
+exports.CheckIn = async () => {
   try {
     const tokens = await validateToken();
     for (const token of tokens) {
       await axios
         .post(
-          "https://api.prod.piggypiggy.io/game/CreateStarPay",
-          { PlayerID: 0, Page: 1, PageSize: 1 },
+          "https://api.prod.piggypiggy.io/game/Sign7Day",
+          {
+            PlayerID: 0,
+            Type: 0,
+          },
           {
             headers: {
               Authorization: `bearer ${token.token}`,
@@ -17,9 +20,7 @@ exports.CreateStarPay = async () => {
         )
         .then((response) => {
           console.log(
-            `[ Running ] : Create StarPay successfully. retCode: ${
-              response.data.data.retCode || response.data.code
-            }`
+            `[ Running ] : CheckIn successfully. retCode: ${response.data.code}`
           );
         })
         .catch((error) => {
@@ -27,6 +28,6 @@ exports.CreateStarPay = async () => {
         });
     }
   } catch (error) {
-    console.log(`[CreateStarPay]`, error.message);
+    console.log(`[CheckIn]`, error.message);
   }
 };

@@ -17,6 +17,7 @@ exports.Task = async () => {
           },
         }
       );
+
       const taskID = [1001, 1002, 1003, 1004, 1005, 1006, 9002];
       const compeleteCount = [2, 5, 8, 8, 5, 5, 1];
 
@@ -59,6 +60,6 @@ exports.Task = async () => {
       }
     }
   } catch (error) {
-    console.log(error.message);
+    console.log(`[Task]`, error.message);
   }
 };

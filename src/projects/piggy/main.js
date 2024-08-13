@@ -4,6 +4,7 @@ const { configDotenv } = require("dotenv");
 const { Task } = require("./Task");
 const { CreateStarPay } = require("./CreateStarPay");
 const { initTask } = require("./initTask");
+const { CheckIn } = require("./checkIn");
 
 configDotenv();
 
@@ -12,9 +13,9 @@ const app = express();
 const main = async () => {
   await initTask();
   await Task();
-  CreateStarPay();
 };
-
+CreateStarPay();
+CheckIn();
 main();
 cron.schedule("0 * * * *", CreateStarPay);
 cron.schedule("0 * * * *", Task);
