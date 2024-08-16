@@ -1,21 +1,19 @@
-const fs = require("fs").promises;
+const axios = require("axios");
 const { configDotenv } = require("dotenv");
 const { fetchJWTTokens } = require("../../utils/Tokens");
+const fs = require("fs").promises;
 configDotenv();
-exports.getTokenAuth = async () => {
+
+exports.getTokens = async () => {
   try {
     const url = `${process.env.API_URL}/token/@tomarketbot`;
     const tokens = await fetchJWTTokens(url);
-    if (tokens.length > 0) {
-      tokens.map((item, index) => {
-        console.log(`\n[ Token ${index + 1} ] : ${item.token}`);
-      });
-      console.log(`[ Total tokens ] : ${tokens.length}`);
+    tokens.map((item, index) => {
+      console.log(`\n[ Token ${index + 1} ] : ${item.token}`);
+    });
+    console.log(`[ Total tokens ] : ${tokens.length}`);
 
-      return tokens;
-    } else {
-      console.log("[ Error ] No tokens found");
-    }
+    return tokens;
   } catch (error) {
     console.log(
       `[ Error ] : Token not found, please add token on configs/config.json`

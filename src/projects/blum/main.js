@@ -5,6 +5,7 @@ const { playGame } = require("./PlayGame");
 const { claimMission, mission } = require("./Mission");
 const { claimRewards } = require("./ClaimReward");
 const { DailyRewards } = require("./DailyReward");
+const { MainTomarketBot } = require("../tomarket/main");
 configDotenv();
 
 const app = express();
@@ -13,6 +14,7 @@ playGame();
 claimMission();
 claimRewards();
 mission();
+MainTomarketBot();
 cron.schedule("0 * * * *", playGame);
 cron.schedule("0 * * * *", claimMission);
 cron.schedule("0 * * * *", claimRewards);
