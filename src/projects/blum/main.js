@@ -10,15 +10,17 @@ configDotenv();
 
 const app = express();
 
-playGame();
-claimMission();
-claimRewards();
-mission();
+const mainBlum = async () => {
+  console.log(`[ BOT ] Blum bot Started...`);
+  playGame();
+  claimMission();
+  claimRewards();
+  mission();
+};
+mainBlum();
 MainTomarketBot();
-cron.schedule("0 * * * *", playGame);
-cron.schedule("0 * * * *", claimMission);
-cron.schedule("0 * * * *", claimRewards);
-cron.schedule("0 * * * *", mission);
+cron.schedule("0 * * * *", mainBlum);
+cron.schedule("0 * * * *", MainTomarketBot);
 
 cron.schedule("0 0 * * *", DailyRewards);
 
