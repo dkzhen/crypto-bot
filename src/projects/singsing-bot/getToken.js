@@ -4,7 +4,7 @@ const { fetchJWTTokens } = require("../../utils/Tokens");
 configDotenv();
 exports.getTokenAuth = async () => {
   try {
-    const url = `${process.env.API_URL}/token/@tomarketbot`;
+    const url = `${process.env.API_URL}/token/@SingSingTGBot`;
     const tokens = await fetchJWTTokens(url);
     if (tokens.length > 0) {
       tokens.map((item, index) => {
