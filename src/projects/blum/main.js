@@ -12,17 +12,19 @@ const app = express();
 
 const mainBlum = async () => {
   console.log(`[ BOT ] Blum bot Started...`);
-  playGame();
-  claimMission();
-  claimRewards();
-  mission();
+
+  await claimMission();
+  await claimRewards();
+  await mission();
+  await playGame();
 };
-mainBlum();
-MainTomarketBot();
+const main = async () => {
+  await mainBlum();
+  await MainTomarketBot();
+};
+main();
 cron.schedule("0 * * * *", mainBlum);
 cron.schedule("0 * * * *", MainTomarketBot);
-
-cron.schedule("0 0 * * *", DailyRewards);
 
 const port = process.env.PORT || process.env.PORT_BLUM || 201;
 app.listen(port, () => {
