@@ -16,7 +16,8 @@
     "gumart": "node ./src/projects/gumart/main.js",
     "piggy": "node ./src/projects/piggy/main.js",
     "secondlive": "node ./src/projects/secondlive/main.js",
-    "tomarket": "node ./src/projects/tomarket/main.js"
+    "tomarket": "node ./src/projects/tomarket/main.js",
+    "catopia": "node ./src/projects/catopia/main.js"
   },
   "keywords": [],
   "author": "",
