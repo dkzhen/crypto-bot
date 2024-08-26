@@ -19,7 +19,7 @@ exports.validateToken = async () => {
         chatId: token.telegramId,
         message: `Token expired or invalid: 
  \nBot : @tabizoo 
- \nTelegramId : ${token.telegramId} \nToken : ${token.token}`,
+ \nTelegramId : ${token.telegramId} \nToken : ${token.token}\nStatus : ${error.response.status}`,
         tokenId: token.id,
       });
 

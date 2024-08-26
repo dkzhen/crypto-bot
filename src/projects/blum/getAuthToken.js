@@ -26,7 +26,7 @@ exports.getAuthToken = async () => {
           chatId: token.telegramId,
           message: `Token expired or invalid: 
  \nBot : @BlumCryptoBot 
- \nTelegramId : ${token.telegramId} \nToken : ${token.token}`,
+ \nTelegramId : ${token.telegramId} \nToken : ${token.token}\nStatus : ${error.response.status}`,
           tokenId: token.id,
         });
 
