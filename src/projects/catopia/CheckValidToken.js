@@ -21,7 +21,7 @@ exports.validateToken = async () => {
       await axios.post(url, {
         chatId: token.telegramId,
         message: `Token expired or invalid: 
- \nBot : @CowtopiaBot 
+ \nBot : @Catopia 
  \nTelegramId : ${token.telegramId} \nToken : ${token.token}`,
         tokenId: token.id,
       });
