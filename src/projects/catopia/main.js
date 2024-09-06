@@ -3,6 +3,7 @@ const express = require("express");
 const { configDotenv } = require("dotenv");
 const { farmPlant } = require("./farmPlant");
 const { claimMission } = require("./claimMission");
+const { upgradeAnimal } = require("./upgrade");
 
 configDotenv();
 
@@ -12,6 +13,7 @@ farmPlant();
 
 cron.schedule("*/12 * * * *", farmPlant);
 cron.schedule("0 * * * *", claimMission);
+cron.schedule("0 * * * *", upgradeAnimal);
 
 const port = process.env.PORT || process.env.PORT_COWTOPIA || 202;
 app.listen(port, () => {
