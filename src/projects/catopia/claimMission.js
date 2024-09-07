@@ -15,7 +15,7 @@ exports.claimMission = async () => {
         })
         .then((res) => res.data.data);
       const availableClaim = mission.filter(
-        (m) => m.isCompleted === true && m.isClaimed === false
+        (m) => m.isCompleted === true && m.claimed === false
       );
       if (availableClaim.length > 0) {
         for (const claim of availableClaim) {
