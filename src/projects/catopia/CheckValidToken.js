@@ -17,15 +17,6 @@ exports.validateToken = async () => {
       });
       validToken.push(token);
     } catch (error) {
-      const url = `${process.env.API_URL}/bot/sendMessage`;
-      await axios.post(url, {
-        chatId: token.telegramId,
-        message: `Token expired or invalid: 
- \nBot : @Catopia 
- \nTelegramId : ${token.telegramId} \nToken : ${token.token}`,
-        tokenId: token.id,
-      });
-
       console.log(`[ Error ] : token not valid , response code : ${error}`);
     }
   }
