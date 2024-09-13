@@ -4,7 +4,7 @@ const { getAuthToken } = require("./getAuthToken");
 configDotenv();
 
 exports.validateToken = async () => {
-  const API_URL = "https://game-domain.blum.codes/api/v1/tasks";
+  const API_URL = "https://earn-domain.blum.codes/api/v1/tasks";
   const tokens = await getAuthToken();
 
   const validToken = [];

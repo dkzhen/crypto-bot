@@ -18,7 +18,7 @@ exports.getAuthToken = async () => {
       try {
         const response = await axios.post(API_AUTH, { query: token.token });
 
-        const auth = response.data.token.refresh;
+        const auth = response.data.token.access;
         authToken.push({ token: auth });
       } catch (error) {
         const url = `${process.env.API_URL}/bot/sendMessage`;
