@@ -20,8 +20,6 @@ const config = apps.map((appName, index) => ({
   name: appName,
   script: "npm",
   args: `run ${appName}`,
-  instances: 1,
-  exec_mode: "cluster",
   env: {
     NODE_ENV: "development",
     PORT: 1000 + index,
