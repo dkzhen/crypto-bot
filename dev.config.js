@@ -1,17 +1,18 @@
 const API_URL = "https://telegram-api.zhen.lat";
 
 const apps = [
-  "singsing",
-  "cowtopia",
+  // "singsing",
+  // "cowtopia",
   "blum",
-  "nomis",
-  "piggy",
-  "banana",
-  "gumart",
+  // "nomis",
+  // "piggy",
+  // "banana",
+  // "gumart",
   "tabizoo",
-  "popp",
-  "secondlive",
-  "tomarket",
+  "major",
+  // "popp",
+  // "secondlive",
+  // "tomarket",
   "catopia",
 ];
 
