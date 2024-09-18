@@ -30,7 +30,7 @@ exports.claimFarming = async () => {
               },
             }
           );
-          console.log(`[ Running ] : ${start.data.message}`);
+          console.log(`[ Running ] : Farming started ${start.data}`);
         } catch (error) {
           console.log(error.message);
         }

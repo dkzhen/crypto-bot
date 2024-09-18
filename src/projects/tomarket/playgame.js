@@ -32,15 +32,23 @@ const claimReward = async (token, API_CLAIM_REWARD) => {
 };
 
 async function checkAvailableGame(token) {
-  const BALANCE_API =
-    "https://api-web.tomarket.ai/tomarket-game/v1/user/balance";
-  const playPasses = await axios.get(BALANCE_API, {
-    headers: {
-      Authorization: `${token.token}`,
-    },
-  });
+  try {
+    const BALANCE_API =
+      "https://api-web.tomarket.ai/tomarket-game/v1/user/balance";
+    const playPasses = await axios.post(
+      BALANCE_API,
+      {},
+      {
+        headers: {
+          Authorization: `${token.token}`,
+        },
+      }
+    );
 
-  return playPasses.data.data.play_passes;
+    return playPasses.data.data.play_passes;
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 async function delayedExecution(count) {

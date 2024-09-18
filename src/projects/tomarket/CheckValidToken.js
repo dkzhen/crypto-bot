@@ -1,40 +1,33 @@
 const { default: axios } = require("axios");
-const { getTokens } = require("./GetTokens");
 const { configDotenv } = require("dotenv");
+const { getAuthToken } = require("./GetTokens");
+const e = require("express");
 configDotenv();
 
 exports.validateToken = async () => {
-  const tokens = await getTokens();
+  const API_URL = "https://api-web.tomarket.ai/tomarket-game/v1/user/balance";
+  const tokens = await getAuthToken();
 
   const validToken = [];
   for (const token of tokens) {
     try {
-      const balance = await axios.get(
-        "https://api-web.tomarket.ai/tomarket-game/v1/user/balance",
+      await axios.post(
+        API_URL,
+        {},
         {
           headers: {
-            "Content-Type": "application/json",
-            Authorization: `${token.token}`,
+            Authorization: `Bearer ${token.token}`,
           },
         }
       );
-      console.log(
-        `[ Balance : ${balance.data.data.available_balance} ]\n[ Play_passes : ${balance.data.data.play_passes} ]\n`
-      );
+
+      console.log(`[ BOT ] : Checking token done..`);
       validToken.push(token);
     } catch (error) {
-      const url = `${process.env.API_URL}/bot/sendMessage`;
-      await axios.post(url, {
-        chatId: token.telegramId,
-        message: `Token expired or invalid: 
- \nBot : @Tomarketbot 
- \nTelegramId : ${token.telegramId} \nToken : ${token.token}`,
-        tokenId: token.id,
-      });
-
-      console.log(`[ Error ] : token not valid , response code : ${error}`);
+      console.log(error);
+      console.log(error.response.status);
+      console.log(`[ Error ] : validate token failed`);
     }
   }
-  console.log(`[ Token valid ] : ${validToken.length}\n`);
   return validToken;
 };
