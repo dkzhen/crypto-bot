@@ -4,6 +4,7 @@ const { configDotenv } = require("dotenv");
 const { dailyMission } = require("./dailyMission");
 const { holdCoin, swipeCoin } = require("./holdCoin");
 const { roullete } = require("./roullete");
+const { getUserVisit } = require("./visit");
 
 configDotenv();
 
@@ -13,7 +14,9 @@ dailyMission();
 holdCoin();
 roullete();
 swipeCoin();
+getUserVisit();
 cron.schedule("0 * * * *", holdCoin);
+cron.schedule("0 * * * *", getUserVisit);
 cron.schedule("0 * * * *", roullete);
 cron.schedule("0 * * * *", swipeCoin);
 cron.schedule("0 * * * *", dailyMission);
