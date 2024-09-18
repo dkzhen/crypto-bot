@@ -1,5 +1,6 @@
 const axios = require("axios");
 const { configDotenv } = require("dotenv");
+const { fetchQueryTokens } = require("../../utils/Tokens");
 const fs = require("fs").promises;
 configDotenv();
 
@@ -7,8 +8,8 @@ exports.getAuthToken = async () => {
   const API_AUTH = "https://api-web.tomarket.ai/tomarket-game/v1/user/login";
 
   try {
-    const data = await fs.readFile("configs/config.json", "utf-8");
-    const tokens = JSON.parse(data);
+    const url = `${process.env.API_URL}/token/@tomarketbot`;
+    const tokens = await fetchQueryTokens(url);
     const authToken = [];
 
     for (const token of tokens) {
@@ -24,9 +25,16 @@ exports.getAuthToken = async () => {
 
         authToken.push({ token: auth });
       } catch (error) {
-        console.log(
-          `[ Error ] : Token not valid. Response code : ${error.response.status} `
-        );
+        const url = `${process.env.API_URL}/bot/sendMessage`;
+        await axios.post(url, {
+          chatId: token.telegramId,
+          message: `Token expired or invalid: 
+ \nBot : @tomarket 
+ \nTelegramId : ${token.telegramId} \nToken : ${token.token}\nStatus : ${error.response.status}`,
+          tokenId: token.id,
+        });
+
+        console.log(`[ Error ] : token not valid , response code : ${error}`);
       }
     }
     return authToken;
