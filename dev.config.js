@@ -12,7 +12,7 @@ const apps = [
   "major",
   // "popp",
   // "secondlive",
-  // "tomarket",
+  "tomarket",
   "catopia",
 ];
 
