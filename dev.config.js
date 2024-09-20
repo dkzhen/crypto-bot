@@ -8,7 +8,7 @@ const apps = [
   // "piggy",
   // "banana",
   // "gumart",
-  "tabizoo",
+  // "tabizoo",
   "major",
   // "popp",
   // "secondlive",
