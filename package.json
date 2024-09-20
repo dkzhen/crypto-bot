@@ -18,7 +18,8 @@
     "secondlive": "node ./src/projects/secondlive/main.js",
     "tomarket": "node ./src/projects/tomarket/main.js",
     "catopia": "node ./src/projects/catopia/main.js",
-    "major": "node ./src/projects/major/main.js"
+    "major": "node ./src/projects/major/main.js",
+    "depin": "node ./src/projects/depin/main.js"
   },
   "keywords": [],
   "author": "",

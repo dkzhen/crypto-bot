@@ -14,6 +14,7 @@ const apps = [
   // "secondlive",
   "tomarket",
   "catopia",
+  "depin",
 ];
 
 const config = apps.map((appName, index) => ({
