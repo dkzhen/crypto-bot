@@ -1,4 +1,7 @@
-const API_URL = "https://telegram-api.zhen.lat";
+const { configDotenv } = require("dotenv");
+
+configDotenv();
+const { API_URL } = process.env;
 
 const apps = [
   // "singsing",
