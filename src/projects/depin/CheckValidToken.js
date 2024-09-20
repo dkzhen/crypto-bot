@@ -5,24 +5,19 @@ const e = require("express");
 configDotenv();
 
 exports.validateToken = async () => {
-  const API_URL = "https://api-web.tomarket.ai/tomarket-game/v1/user/balance";
+  const API_URL = "https://api.depinalliance.xyz/users/info";
   const tokens = await getAuthToken();
 
   const validToken = [];
   for (const token of tokens) {
     try {
-      await axios.post(
-        API_URL,
-        {},
-        {
-          headers: {
-            Authorization: `Bearer ${token.token}`,
-          },
-        }
-      );
+      await axios.get(API_URL, {
+        headers: {
+          Authorization: `Bearer ${token.token}`,
+        },
+      });
 
       console.log(`[ BOT ] : Checking token done..`);
-
       validToken.push(token);
     } catch (error) {
       console.log(error);

@@ -27,33 +27,6 @@ exports.DailyCheckIn = async () => {
           `[ Running ] : Check in Successfully. Points : ${res.data.data.today_points}. Streak : ${res.data.data.check_counter}`
         );
       }
-
-      // const star = await axios.post(
-      //   "https://api-web.tomarket.ai/tomarket-game/v1/tasks/classmateStars",
-      //   { task_id: 150 },
-      //   {
-      //     headers: {
-      //       "Content-Type": "application/json",
-      //       Authorization: `${token.token}`,
-      //     },
-      //   }
-      // );
-      // console.log(
-      //   `[ BOT ] : Classmate Stars : ${star.data.data.stars}, days: ${star.data.data.days} `
-      // );
-      // const claim = await axios.post(
-      //   "https://api-web.tomarket.ai/tomarket-game/v1/tasks/claim",
-      //   { task_id: 150 },
-      //   {
-      //     headers: {
-      //       "Content-Type": "application/json",
-      //       Authorization: `${token.token}`,
-      //     },
-      //   }
-      // );
-
-      // console.log(claim.data);
-      // console.log(`[ Running ] : Claim classmate : ${claim.data.data}`);
     }
   } catch (error) {
     console.log(error.message);
