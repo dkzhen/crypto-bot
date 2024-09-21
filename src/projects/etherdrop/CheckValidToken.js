@@ -24,6 +24,7 @@ exports.validateToken = async () => {
       console.log(`[ BOT ] : Checking token done..`);
       validToken.push(token);
     } catch (error) {
+      console.log(error);
       console.log(error.response.status);
       console.log(`[ Error ] : validate token failed`);
     }

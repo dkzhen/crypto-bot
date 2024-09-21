@@ -12,16 +12,6 @@ exports.getAuthToken = async () => {
 
     for (const token of tokens) {
       try {
-        await axios.get(
-          "https://elb.seeddao.org/api/v1/profile2",
-
-          {
-            headers: {
-              "telegram-data": `${token.token}`,
-            },
-          }
-        );
-
         authToken.push({ token: token.token });
       } catch (error) {
         const url = `${process.env.API_URL}/bot/sendMessage`;

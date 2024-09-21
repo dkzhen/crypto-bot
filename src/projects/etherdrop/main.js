@@ -5,13 +5,11 @@ const { claimSeed } = require("./farming");
 const { Login, streakReward, spinTicket } = require("./dailyLogin");
 const { catchEgg } = require("./wormEgg");
 const { catchWormOrEgg } = require("./catch");
-const { validateToken } = require("./CheckValidToken");
 
 configDotenv();
 
 const app = express();
 
-validateToken();
 claimSeed();
 Login();
 streakReward();
