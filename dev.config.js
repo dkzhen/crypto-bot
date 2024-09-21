@@ -18,6 +18,7 @@ const apps = [
   "tomarket",
   "catopia",
   "depin",
+  "seed",
 ];
 
 const config = apps.map((appName, index) => ({

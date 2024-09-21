@@ -19,7 +19,8 @@
     "tomarket": "node ./src/projects/tomarket/main.js",
     "catopia": "node ./src/projects/catopia/main.js",
     "major": "node ./src/projects/major/main.js",
-    "depin": "node ./src/projects/depin/main.js"
+    "depin": "node ./src/projects/depin/main.js",
+    "seed": "node ./src/projects/seed/main.js"
   },
   "keywords": [],
   "author": "",
