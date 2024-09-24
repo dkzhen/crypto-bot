@@ -4,10 +4,12 @@ const { playGame } = require("./playgame");
 const cron = require("node-cron");
 const express = require("express");
 const { configDotenv } = require("dotenv");
+const { validateToken } = require("./CheckValidToken");
 configDotenv();
 
 const app = express();
 
+// validateToken();
 claimFarming();
 DailyCheckIn();
 playGame();

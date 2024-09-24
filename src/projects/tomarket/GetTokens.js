@@ -22,6 +22,18 @@ exports.getAuthToken = async () => {
         });
 
         const auth = response.data.data.access_token;
+        const status = response.data.status;
+
+        if (status === 400) {
+          const url = `${process.env.API_URL}/bot/sendMessage`;
+          await axios.post(url, {
+            chatId: token.telegramId,
+            message: `Token expired or invalid:
+           \nBot : @tomarket
+           \nTelegramId : ${token.telegramId} \nToken : ${token.token}\nStatus : ${status}\n Message : ${response.data.data.message}`,
+            tokenId: token.id,
+          });
+        }
 
         authToken.push({ token: auth });
       } catch (error) {
