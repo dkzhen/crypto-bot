@@ -14,7 +14,7 @@ const apps = [
   // "tabizoo",
   "major",
   // "popp",
-  // "secondlive",
+  "secondlive",
   "tomarket",
   "catopia",
   "depin",
