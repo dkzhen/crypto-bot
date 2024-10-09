@@ -5,7 +5,7 @@ const e = require("express");
 configDotenv();
 
 exports.validateToken = async () => {
-  const API_URL = "https://elb.seeddao.org/api/v1/profile2";
+  const API_URL = "https://api.miniapp.dropstab.com/api/refLink";
   const tokens = await getAuthToken();
 
   const validToken = [];

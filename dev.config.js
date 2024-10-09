@@ -15,6 +15,7 @@ const apps = [
   "major",
   // "popp",
   "secondlive",
+  "etherdrop",
   "tomarket",
   "catopia",
   "depin",

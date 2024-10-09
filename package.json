@@ -20,7 +20,8 @@
     "catopia": "node ./src/projects/catopia/main.js",
     "major": "node ./src/projects/major/main.js",
     "depin": "node ./src/projects/depin/main.js",
-    "seed": "node ./src/projects/seed/main.js"
+    "seed": "node ./src/projects/seed/main.js",
+    "etherdrop": "node ./src/projects/etherdrop/main.js"
   },
   "keywords": [],
   "author": "",
