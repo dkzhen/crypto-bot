@@ -10,16 +10,32 @@ configDotenv();
 
 const app = express();
 
-dailyMission();
-holdCoin();
-roullete();
-swipeCoin();
-getUserVisit();
-cron.schedule("0 * * * *", holdCoin);
-cron.schedule("0 * * * *", getUserVisit);
-cron.schedule("0 * * * *", roullete);
-cron.schedule("0 * * * *", swipeCoin);
-cron.schedule("0 * * * *", dailyMission);
+// Helper function to add delay
+const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+async function scheduleWithDelay() {
+  dailyMission();
+  await delay(10000); // 10 seconds delay
+
+  holdCoin();
+  await delay(10000); // 10 seconds delay
+
+  roullete();
+  await delay(10000); // 10 seconds delay
+
+  swipeCoin();
+  await delay(10000); // 10 seconds delay
+
+  getUserVisit();
+}
+
+// Run the functions initially with delay
+scheduleWithDelay();
+
+// Schedule the tasks with cron, each with the same interval but delayed execution
+cron.schedule("0 * * * *", async () => {
+  await scheduleWithDelay();
+});
 
 const port = process.env.PORT || process.env.PORT_BLUM || 201;
 app.listen(port, () => {

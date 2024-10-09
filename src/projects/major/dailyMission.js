@@ -38,7 +38,7 @@ exports.dailyMission = async () => {
         } else {
           console.log(`[ Error ] : Error ${task.id} task ${task.title}`);
         }
-        await delay(2000);
+        await delay(5000);
       }
     }
   } catch (error) {
