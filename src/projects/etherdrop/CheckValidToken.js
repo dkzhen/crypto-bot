@@ -16,7 +16,7 @@ exports.validateToken = async () => {
 
         {
           headers: {
-            "telegram-data": `${token.token}`,
+            Authorization: `Bearer ${token.token}`,
           },
         }
       );
