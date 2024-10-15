@@ -9,12 +9,12 @@ configDotenv();
 
 const app = express();
 
-playGame();
+// playGame();
 claimMission();
 claimRewards();
 mission();
 
-cron.schedule("0 * * * *", playGame);
+// cron.schedule("0 * * * *", playGame);
 cron.schedule("0 * * * *", claimMission);
 cron.schedule("0 * * * *", claimRewards);
 cron.schedule("0 * * * *", mission);
